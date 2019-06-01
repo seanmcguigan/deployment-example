@@ -20,7 +20,6 @@ pipeline {
                 echo "With build id $env.BUILD_ID"
                 echo "With node name $env.NODE_NAME"
                 echo "With git hash $env.HASH"
-                echo "echo ${params.region}"
                 """
             }
         }
