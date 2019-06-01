@@ -2,7 +2,7 @@ pipeline {
     agent {label 'slaveOne'}
     
     environment {
-        USER_CREDS = credentials('seanmc_user_creds')
+ //       USER_CREDS = credentials('seanmc_user_creds')
         HASH = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
     }
 
