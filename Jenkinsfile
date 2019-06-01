@@ -2,7 +2,9 @@ pipeline {
     agent {label 'slaveOne'}
     
     environment {
- //       USER_CREDS = credentials('seanmc_user_creds')
+        MY_FOO = "foo"
+        ORG = "seanmcguigan"
+        PROJECT = "webapp"
         HASH = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
     }
 
@@ -12,6 +14,7 @@ pipeline {
                 
                 sh """
                 echo 'Building...................'
+                docker version
                 echo "On branch $env.BRANCH_NAME"
                 echo "With build number $env.BUILD_NUMBER"
                 echo "With build id $env.BUILD_ID"
