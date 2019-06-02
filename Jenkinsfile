@@ -14,12 +14,12 @@ pipeline {
                 
                 sh """
                 echo 'Building...................'
-                docker version
                 echo "On branch $env.BRANCH_NAME"
                 echo "With build number $env.BUILD_NUMBER"
                 echo "With build id $env.BUILD_ID"
                 echo "With node name $env.NODE_NAME"
                 echo "With git hash $env.HASH"
+                docker version
                 """
             }
         }
