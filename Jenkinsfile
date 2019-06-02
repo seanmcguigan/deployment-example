@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'slaveOne'}
     
     environment {
         MY_FOO = "foo"
